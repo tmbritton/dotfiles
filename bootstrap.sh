@@ -31,6 +31,14 @@ echo "==> linking XDG configs"
 link "$DOTFILES/starship/starship.toml" "$XDG/starship.toml"
 link "$DOTFILES/ghostty/config"         "$XDG/ghostty/config"
 
+# In bootstrap.sh, add a section:
+echo "==> neovim config"
+if [ ! -d "$XDG/nvim" ]; then
+  git clone https://github.com/tmbritton/kickstart.nvim.git "$XDG/nvim"
+else
+  echo "  $XDG/nvim already exists, skipping clone"
+fi
+
 echo ""
 echo "done."
 echo ""
