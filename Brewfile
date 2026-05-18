@@ -38,6 +38,12 @@ brew "tmux"               # terminal multiplexer
 # ===== dev: languages / runtimes =====
 brew "mise"               # polyglot version manager (replaces asdf, nvm, rbenv, etc.)
 brew "node"
+brew "go"
+brew "gopls"
+brew "delve"              # debugger (dlv command)
+brew "golangci-lint"      # meta-linter, runs many linters in one pass
+brew "goreleaser"         # build + release automation for Go binaries
+brew "go-air"
 
 # ===== secrets / env =====
 brew "direnv"             # per-project env via .envrc

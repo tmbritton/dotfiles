@@ -24,3 +24,7 @@ export PATH="$HOME/dotfiles/bin:$HOME/.local/bin:$PATH"
 if [ -d /home/linuxbrew/.linuxbrew ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+# Go
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
