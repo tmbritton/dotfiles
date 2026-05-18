@@ -1,0 +1,18 @@
+# never commit anything ending in .local
+*.local
+
+# os crud
+.DS_Store
+Thumbs.db
+
+# editor crud
+.vscode/
+.idea/
+*.swp
+*~
+
+# secrets, just in case
+*.key
+*.pem
+.env
+.envrc

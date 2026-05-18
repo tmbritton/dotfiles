@@ -1,0 +1,33 @@
+# os
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.nvim/
+.envrc
+
+# language toolchain crud
+__pycache__/
+*.pyc
+node_modules/
+.pnp/
+.next/
+dist/
+build/
+target/
+_build/
+deps/
+
+# secrets — never accidentally commit
+*.local
+*.key
+*.pem
+.env
+.env.*
+!.env.example

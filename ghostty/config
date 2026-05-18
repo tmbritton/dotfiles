@@ -1,0 +1,23 @@
+# ghostty — terminal config
+# docs: https://ghostty.org/docs/config
+
+# font — pick one that's installed. JetBrains Mono is a solid default.
+font-family = JetBrains Mono
+font-size = 13
+
+# layout
+window-padding-x = 12
+window-padding-y = 12
+window-decoration = true
+window-theme = dark
+
+# theme — built-in themes work out of the box.
+# list available: `ghostty +list-themes`
+theme = catppuccin-mocha
+
+# behavior
+cursor-style = block
+cursor-style-blink = false
+copy-on-select = clipboard
+confirm-close-surface = false
+shell-integration = zsh

@@ -1,0 +1,9 @@
+# completions — extra definitions for many tools
+zsh-users/zsh-completions
+
+# autosuggestions — fish-style ghost text from history
+zsh-users/zsh-autosuggestions
+
+# syntax highlighting — colors valid/invalid commands as you type
+# (must come last in the plugin list — it hooks the line editor)
+zsh-users/zsh-syntax-highlighting
