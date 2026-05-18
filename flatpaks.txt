@@ -1,0 +1,31 @@
+# ===== browsers =====
+app.zen_browser.zen
+com.brave.Browser
+io.github.ungoogled_software.ungoogled_chromium
+
+# ===== creative / writing =====
+md.obsidian.Obsidian
+
+# ===== media =====
+com.spotify.Client
+org.jellyfin.JellyfinDesktop
+org.videolan.VLC
+
+# ===== dev =====
+dev.zed.Zed
+io.podman_desktop.PodmanDesktop
+com.usebruno.Bruno
+io.beekeeperstudio.Studio
+org.sqlitebrowser.sqlitebrowser
+me.iepure.devtoolbox
+
+# ===== system / utilities =====
+com.github.tchx84.Flatseal
+com.mattjakeman.ExtensionManager
+org.flameshot.Flameshot
+
+# ===== networking / privacy =====
+com.protonvpn.www
+
+# ===== peripherals =====
+net.epson.epsonscan2

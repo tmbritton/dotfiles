@@ -153,3 +153,47 @@ command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 # ---------- machine-local overrides + secrets ----------
 # NOT in dotfiles repo. mode 600. API keys, machine-specific tweaks, etc.
 [ -f ~/.zshenv.local ] && source ~/.zshenv.local
+
+# ---------- flatpak ----------
+# install only the flatpaks that are in flatpaks.txt but not yet installed
+flatpak-restore() {
+  local file="${1:-$HOME/dotfiles/flatpaks.txt}"
+  local tracked installed missing
+
+  tracked=$(grep -v '^\s*#' "$file" | grep -v '^\s*$' | sort -u)
+  installed=$(flatpak list --app --user --columns=application | sort -u)
+  missing=$(comm -23 <(echo "$tracked") <(echo "$installed"))
+
+  if [ -z "$missing" ]; then
+    echo "all tracked flatpaks already installed."
+    return 0
+  fi
+
+  echo "missing:"
+  echo "$missing" | sed 's/^/  /'
+  echo ""
+  echo "$missing" | xargs flatpak install --user --noninteractive flathub
+}
+
+# dump current installed flatpaks back to the file (loses comments — use sparingly)
+alias flatpak-dump='flatpak list --app --user --columns=application > ~/dotfiles/flatpaks.txt'
+
+# show what's installed vs what's in the file
+alias flatpak-diff='diff <(flatpak list --app --user --columns=application | sort) <(grep -v "^\s*#" ~/dotfiles/flatpaks.txt | grep -v "^\s*$" | sort)'
+
+# ---------- brew ----------
+
+# install only the brew formulas that are in Brewfile but not yet installed
+brew-restore() {
+  local file="${1:-$HOME/dotfiles/Brewfile}"
+  if ! brew bundle check --file="$file" --quiet >/dev/null 2>&1; then
+    echo "installing missing brew formulas..."
+    brew bundle install --file="$file"
+  else
+    echo "all brew formulas already installed."
+  fi
+}
+
+alias brew-dump='brew bundle dump --force --file=~/dotfiles/Brewfile'
+alias brew-diff='brew bundle check --verbose --file=~/dotfiles/Brewfile'
+
