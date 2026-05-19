@@ -34,6 +34,7 @@ brew "gh"                 # github cli
 brew "lazygit"            # tui git client — genuinely great
 brew "neovim"             # editor
 brew "tmux"               # terminal multiplexer
+brew "pi-coding-agent"
 
 # ===== dev: languages / runtimes =====
 brew "mise"               # polyglot version manager (replaces asdf, nvm, rbenv, etc.)
